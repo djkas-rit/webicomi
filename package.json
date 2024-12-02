@@ -7,9 +7,7 @@
     "start": "node ./server/app.js",
     "pretest": "eslint ./server --fix",
     "test": "echo \"Tests complete\"",
-    "buildBundle": "webpack",
-    "watchBundle": "webpack watch",
-    "heroku-postbuild": "webpack --mode production"
+    "dev": "nodemon ./server/app.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +16,7 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.31.0",
-    "nodemon": "^3.1.7",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
