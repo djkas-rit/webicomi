@@ -1,6 +1,6 @@
 const Comic = require('../models/Comic');
 
-exports.getComics = async (req, res) => {
+const getComics = async (req, res) => {
   try {
     const comics = await Comic.find();
     res.json(comics);
@@ -9,7 +9,7 @@ exports.getComics = async (req, res) => {
   }
 };
 
-exports.addComic = async (req, res) => {
+const addComic = async (req, res) => {
   try {
     const {
       title, author, genres, description, coverImage,
@@ -23,3 +23,5 @@ exports.addComic = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+module.exports = { getComics, addComic };

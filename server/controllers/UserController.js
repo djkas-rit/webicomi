@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-exports.registerUser = async (req, res) => {
+const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
     const user = new User({ username, email, password });
@@ -11,7 +11,7 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-exports.loginUser = async (req, res) => {
+const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });
@@ -23,3 +23,5 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+module.exports = { register, login };
